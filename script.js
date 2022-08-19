@@ -24,6 +24,8 @@ function setupGrid() {
   freshGridSquares.forEach((square) => {
     square.remove();
   });
+  gridContainer.style.gridTemplateColumns = "1fr ".repeat(newSize).trim();
+  gridContainer.style.gridTemplateRows = "1fr".repeat(newSize).trim();
 
   for (let i = 0; i < newSize * newSize; i++) {
     const newGridBox = document.createElement("div");
@@ -31,6 +33,8 @@ function setupGrid() {
     newGridBox.onmouseover = () => {
       newGridBox.classList.add("grey");
     };
+    newGridBox.style.width = `${Math.floor(640 / newSize)}px`;
+    newGridBox.style.height = `${Math.floor(640 / newSize)}px`;
     gridContainer.appendChild(newGridBox);
   }
 }
