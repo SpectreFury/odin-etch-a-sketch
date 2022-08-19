@@ -57,3 +57,7 @@ header h1 {
   background-color: #f3ed61;
   border: 1px solid black;
 }
+
+.grey {
+  background-color: grey;
+}
