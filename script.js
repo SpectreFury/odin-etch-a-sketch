@@ -1,5 +1,7 @@
 const gridContainer = document.querySelector(".grid-container");
 const promptBtn = document.querySelector(".promptBtn");
+const randomBtn = document.querySelector(".random");
+const clearBtn = document.querySelector(".clear");
 
 // Creates a grid
 for (let i = 0; i < 256; i++) {
@@ -16,7 +18,10 @@ gridSquares.forEach((square) => {
   });
 });
 
+// Buttons
 promptBtn.addEventListener("click", setupGrid);
+randomBtn.addEventListener("click", randomColor);
+clearBtn.addEventListener("click", clearGrid);
 
 function setupGrid() {
   const newSize = +prompt("Enter the new dimensions:");
@@ -37,4 +42,23 @@ function setupGrid() {
     newGridBox.style.height = `${Math.floor(640 / newSize)}px`;
     gridContainer.appendChild(newGridBox);
   }
+}
+function randomColor() {
+  const freshGridSquares = document.querySelectorAll(".grid-box");
+  freshGridSquares.forEach((box) => {
+    box.onmouseover = (e) => {
+      box.style.backgroundColor = `rgb(${randomValue()}, ${randomValue()}, ${randomValue()})`;
+    };
+  });
+}
+
+function clearGrid() {
+  const freshGridSquares = document.querySelectorAll(".grid-box");
+  freshGridSquares.forEach((box) => {
+    box.style.backgroundColor = "#f3ed61";
+  });
+}
+
+function randomValue() {
+  return Math.floor(Math.random() * 255);
 }

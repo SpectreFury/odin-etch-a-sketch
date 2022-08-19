@@ -87,3 +87,17 @@ header h1 {
 .grey {
   background-color: grey;
 }
+
+.random {
+  position: absolute;
+  left: 8%;
+  top: 35%;
+  width: 297px;
+}
+
+.clear {
+  position: absolute;
+  left: 8%;
+  top: 50%;
+  width: 297px;
+}
